@@ -10,3 +10,8 @@ def getMatch(match_id):
 def getBoardfromLink(board_link):
     r = requests.get(board_link)
     if r: return r.json()
+
+
+def getPlayerStats(username):
+    r = requests.get(chess_url + f"pub/player/{username}/stats")
+    if r : return r.json()
